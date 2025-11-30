@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+
+  background: radial-gradient(circle at center, #e8f0ff, #c8d8ff, #a6c1ff);
+}
+
+/* Autor */
+.autor {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+  text-shadow: 0 0 4px rgba(255,255,255,0.5);
+}
+
+.autor:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Card */
+.game-card {
+  width: 95vw;
+  max-width: 900px;
+  height: 90vh;
+  padding: 40px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.8s ease;
+}
+
+h1 {
+  font-size: 42px;
+  text-align: center;
+  text-shadow: 0 0 20px #7dd3fc;
+}
+
+/* Buttons */
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.choice {
+  background: #0ea5e9;
+  border: none;
+  padding: 35px;
+  font-size: 48px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.15s;
+  box-shadow: 0 0 18px rgba(14,165,233,0.6);
+}
+
+.choice:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(14,165,233,1);
+}
+
+.choice:active {
+  transform: scale(0.9);
+  filter: brightness(0.8);
+}
+
+/* Status */
+#status {
+  font-size: 32px;
+  min-height: 80px;
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.flash-win {
+  text-shadow: 0 0 20px #22c55e;
+}
+
+.flash-lose {
+  text-shadow: 0 0 20px #ef4444;
+}
+
+.flash-draw {
+  text-shadow: 0 0 20px #fcd34d;
+}
+
+/* Score */
+.score {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+  padding: 15px 25px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 16px;
+}
+
+/* Clear button */
+.clear {
+  background: transparent;
+  border: 2px solid #38bdf8;
+  padding: 15px 30px;
+  border-radius: 14px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #38bdf8;
+  transition: 0.3s;
+}
+
+.clear:hover {
+  background: #38bdf8;
+  color: #0c0f17;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(20px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 34px; }
+  .choice { padding: 25px; font-size: 40px; }
+  #status { font-size: 24px; }
+  .score { font-size: 22px; }
+  .clear { font-size: 18px; padding: 12px 20px; }
+}
+
+@media (max-width: 480px) {
+  .game-card { padding: 25px; }
+  h1 { font-size: 28px; }
+
+  .choices {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .choice {
+    width: 100%;
+    padding: 22px;
+    font-size: 36px;
+  }
+
+  #status { font-size: 22px; }
+  .score { font-size: 20px; padding: 10px; }
+}

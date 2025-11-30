@@ -1,0 +1,22 @@
+<div class="game-card">
+
+  <p class="autor">Autor: <strong>Roberto Yamaguchi</strong>✨</p>
+
+  <h1>Piedra Papel o Tijera</h1>
+
+  <div class="choices">
+    <button class="choice" (click)="result('piedra')">🪨</button>
+    <button class="choice" (click)="result('papel')">📄</button>
+    <button class="choice" (click)="result('tijera')">✂️</button>
+  </div>
+
+  <p id="status" [ngClass]="statusClass">{{ status }}</p>
+
+  <div class="score">
+    <span>Jugador: {{ scorePlayer }}</span>
+    <span>Oponente : {{ scoreBot }}</span>
+  </div>
+
+  <button class="clear" (click)="clearScore()">Reiniciar</button>
+
+</div>
